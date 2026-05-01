@@ -1,0 +1,441 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow .3s;
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.navContainer {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .9rem clamp(1.2rem, 4vw, 2.5rem);
+  gap: 1rem;
+}
+
+.logoImg {
+  height: 42px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.navLinks a {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  transition: var(--transition);
+  position: relative;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand);
+  transform: scaleX(0);
+  transition: transform .2s;
+}
+
+.navLinks a:hover {
+  color: var(--brand);
+}
+
+.navLinks a:hover::after,
+.navLinks a.active::after {
+  transform: scaleX(1);
+}
+
+.navLinks a.active {
+  color: var(--brand);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--brand);
+  padding: .3rem;
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(85vw, 320px);
+  height: 100vh;
+  background: var(--white);
+  z-index: 1100;
+  padding: 5.5rem 2rem 3rem;
+  transform: translateX(100%);
+  transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: var(--shadow-lg);
+}
+
+.mobileMenu.open {
+  transform: translateX(0);
+}
+
+.mobileMenu a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink-light);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  transition: var(--transition);
+}
+
+.mobileMenu a:hover {
+  color: var(--brand);
+  padding-left: .5rem;
+}
+
+.closeMenu {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  background: var(--cream);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: var(--forest-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.closeMenu:hover {
+  background: var(--brand);
+  color: white;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 31, 26, .45);
+  backdrop-filter: blur(4px);
+  z-index: 1050;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 860px) {
+  .navLinks {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Add to existing Navbar.module.css */
+
+.authSection {
+  display: flex;
+  align-items: center;
+}
+
+.signInBtn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.signInBtn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: rgba(232, 133, 0, 0.05);
+}
+
+.mobileAuthDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 1rem 0;
+}
+
+.mobileUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+}
+
+.mobileUserAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mobileUserAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobileUserAvatar span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.mobileUserInfo div:last-child {
+  flex: 1;
+}
+
+.mobileUserInfo strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--forest);
+  margin-bottom: 0.2rem;
+}
+
+.mobileUserInfo span {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.mobileSignInBtn,
+.mobileSignUpBtn,
+.mobileLogoutBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 0.8rem;
+}
+
+.mobileSignInBtn {
+  background: transparent;
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
+}
+
+.mobileSignInBtn:hover {
+  background: var(--brand);
+  color: white;
+}
+
+.mobileSignUpBtn {
+  background: var(--brand);
+  border: none;
+  color: white;
+}
+
+.mobileSignUpBtn:hover {
+  background: var(--brand-deep);
+}
+
+.mobileLogoutBtn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--ink-light);
+}
+
+.mobileLogoutBtn:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+@media (max-width: 860px) {
+  .authSection {
+    display: none;
+  }
+}
+
+
+/* Add to existing Navbar.module.css - ensure auth section is visible on mobile */
+
+/* Mobile menu styles - make sure auth buttons appear */
+.mobileAuthDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 1rem 0;
+}
+
+.mobileUserInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+}
+
+.mobileUserAvatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mobileUserAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobileUserAvatar span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.mobileUserInfo div:last-child {
+  flex: 1;
+}
+
+.mobileUserInfo strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--forest);
+  margin-bottom: 0.2rem;
+}
+
+.mobileUserInfo span {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.mobileSettingsBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 0.8rem;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--ink-light);
+}
+
+.mobileSettingsBtn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: rgba(232, 133, 0, 0.05);
+}
+
+.mobileSignInBtn,
+.mobileSignUpBtn,
+.mobileLogoutBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-bottom: 0.8rem;
+}
+
+.mobileSignInBtn {
+  background: transparent;
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
+}
+
+.mobileSignInBtn:hover {
+  background: var(--brand);
+  color: white;
+}
+
+.mobileSignUpBtn {
+  background: var(--brand);
+  border: none;
+  color: white;
+}
+
+.mobileSignUpBtn:hover {
+  background: var(--brand-deep);
+}
+
+.mobileLogoutBtn {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--ink-light);
+}
+
+.mobileLogoutBtn:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+}
+
+/* Make auth section visible on mobile - but we show it in mobile menu instead */
+@media (max-width: 860px) {
+  .authSection {
+    display: none; /* Hide on mobile, show in mobile menu instead */
+  }
+}

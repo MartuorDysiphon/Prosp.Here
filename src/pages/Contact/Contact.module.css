@@ -1,0 +1,109 @@
+.contactWrap {
+  background: #fff;
+}
+
+.contactInner {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.formGroup {
+  margin-bottom: 1.2rem;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  width: 100%;
+  padding: .9rem 1.3rem;
+  font-family: var(--font-body);
+  font-size: .9rem;
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: var(--transition);
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  border-color: var(--brand);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(194, 93, 30, .1);
+}
+
+.formGroup textarea {
+  border-radius: var(--radius-sm);
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--muted);
+}
+
+.contactChannels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.contactChannels a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--forest-mid);
+  padding: .5rem 1.2rem;
+  border-radius: var(--radius-xl);
+  border: 1.5px solid var(--border);
+  transition: var(--transition);
+}
+
+.contactChannels a:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.feedbackSuccess {
+  background: #ecf7f2;
+  border: 1px solid #b8e0d0;
+  color: #1a5738;
+  border-radius: var(--radius-md);
+  padding: .9rem 1.2rem;
+  font-size: .88rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.feedbackError {
+  background: #fff0ea;
+  border: 1px solid #f8ccb0;
+  color: #8f3f0e;
+  border-radius: var(--radius-md);
+  padding: .9rem 1.2rem;
+  font-size: .88rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+@media (max-width: 600px) {
+  .contactInner {
+    padding: 1.5rem;
+  }
+}

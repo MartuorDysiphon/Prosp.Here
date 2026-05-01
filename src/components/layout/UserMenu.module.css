@@ -1,0 +1,178 @@
+.userMenu {
+  position: relative;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.userAvatar:hover {
+  border-color: var(--brand);
+}
+
+.userAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userAvatar span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 260px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  z-index: 1000;
+  animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.userAvatarLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.userAvatarLarge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userAvatarLarge span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.userDetails {
+  flex: 1;
+}
+
+.userDetails strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--forest);
+  margin-bottom: 0.2rem;
+}
+
+.userDetails span {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0 1rem;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--ink-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.logoutBtn i {
+  width: 20px;
+  color: var(--muted);
+}
+
+.logoutBtn:hover {
+  background: var(--cream);
+  color: var(--brand);
+}
+
+.logoutBtn:hover i {
+  color: var(--brand);
+}
+
+@media (max-width: 600px) {
+  .dropdown {
+    width: 240px;
+    right: -10px;
+  }
+}
+
+/* Add to existing UserMenu.module.css */
+
+.settingsBtn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--ink-light);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.settingsBtn i {
+  width: 20px;
+  color: var(--muted);
+}
+
+.settingsBtn:hover {
+  background: var(--cream);
+  color: var(--brand);
+}
+
+.settingsBtn:hover i {
+  color: var(--brand);
+}
