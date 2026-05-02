@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useUser } from '@clerk/clerk-react';
 import styles from './Sessions.module.css';
 
+// Import panelist images
+import kiaraImage from '../../assets/panelists/kiara.jpg';
+import mpenduloImage from '../../assets/panelists/mpendulo.jpg';
+import zewelanjiImage from '../../assets/panelists/zewelanji.jpg';
+import veronicahImage from '../../assets/panelists/veronicah.jpg';
+import zandileImage from '../../assets/panelists/zandile.jpg';
+
 const Sessions = () => {
   const { user, isSignedIn, isLoaded } = useUser();
   const [showForm, setShowForm] = useState(false);
@@ -58,37 +65,43 @@ const Sessions = () => {
     }
   ];
 
-  // Panelists from previous sessions (no contact info)
+  // Panelists with images
   const panelists = [
     {
       id: 1,
       name: 'Kiara Bouw',
-      role: 'Audit Trainee at Baker Tilly Tuffias'
+      role: 'Audit Trainee at Baker Tilly Tuffias',
+      image: kiaraImage
     },
     {
       id: 2,
       name: 'Linda Ndungane',
-      role: 'Employer Branding Specialist at AGSA'
+      role: 'Employer Branding Specialist at AGSA',
+      image: kiaraImage
     },
     {
       id: 3,
       name: 'Mpendulo Gwebo',
-      role: 'Strategic Transformation Analyst at Deloitte'
+      role: 'Strategic Transformation Analyst at Deloitte',
+      image: mpenduloImage
     },
     {
       id: 4,
       name: 'Zewelanji Mungomba',
-      role: 'SAIPA Trainee at MMS Group'
+      role: 'SAIPA Trainee at MMS Group',
+      image: zewelanjiImage
     },
     {
       id: 5,
       name: 'Veronicah Siziba',
-      role: 'Audit Manager at PwC'
+      role: 'Audit Manager at PwC',
+      image: veronicahImage
     },
     {
       id: 6,
       name: 'Zandi Mlilo',
-      role: 'IB Analyst at ABSA Bank'
+      role: 'IB Analyst at ABSA Bank',
+      image: zandileImage
     }
   ];
 
@@ -320,7 +333,7 @@ const Sessions = () => {
           ))}
         </div>
 
-        {/* Panelists Section - ONLY PANELISTS, NO FOUNDERS */}
+        {/* Panelists Section with Images */}
         <div className={styles.panelistsSection}>
           <div className={styles.sectionHeader}>
             <i className="fas fa-users"></i>
@@ -330,8 +343,12 @@ const Sessions = () => {
           <div className={styles.panelistsCarousel}>
             {panelists.map((panelist) => (
               <div key={panelist.id} className={styles.panelistCard}>
-                <div className={styles.panelistAvatar}>
-                  <span>{panelist.name.charAt(0)}{panelist.name.split(' ')[1]?.charAt(0) || ''}</span>
+                <div className={styles.panelistImage}>
+                  {panelist.image ? (
+                    <img src={panelist.image} alt={panelist.name} />
+                  ) : (
+                    <span>{panelist.name.charAt(0)}{panelist.name.split(' ')[1]?.charAt(0) || ''}</span>
+                  )}
                 </div>
                 <h4>{panelist.name}</h4>
                 <p>{panelist.role}</p>

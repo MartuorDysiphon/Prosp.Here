@@ -51,8 +51,8 @@ const Team = () => {
     {
       id: 4,
       name: 'Diva Doe',
-      role: 'Co Founder',
-      title: 'Strategy and Operations Lead',
+      role: 'Content Director',
+      title: 'PhD in Business Strategy',
       location: 'Cape Town, South Africa',
       description: 'Diva joined the founding team with a background in business strategy and operations. She saw the potential of Prosp.Here to scale impact across South Africa. She focuses on building partnerships with universities and corporations to expand the organisation reach.',
       hobbies: 'Running, reading business books, podcasting, coaching youth soccer',
