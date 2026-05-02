@@ -15,7 +15,7 @@ const SignInModal = ({ isOpen, onClose, defaultTab = 'signin' }) => {
         </button>
         
         <div className={styles.modalHeader}>
-          <img src="/assets/logo.png" alt="Prosp.Here" className={styles.modalLogo} />
+          <img src="/logo.png" alt="Prosp.Here" className={styles.modalLogo} />
         </div>
         
         <div className={styles.tabs}>

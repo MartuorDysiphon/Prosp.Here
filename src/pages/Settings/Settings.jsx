@@ -41,7 +41,7 @@ const Settings = () => {
   if (!isLoaded) {
     return (
       <div className={styles.loadingContainer}>
-        <img src="/assets/logo.png" alt="Loading" className={styles.loadingLogo} />
+        <img src="/logo.png" alt="Loading" className={styles.loadingLogo} />
         <p>Loading your account...</p>
       </div>
     );

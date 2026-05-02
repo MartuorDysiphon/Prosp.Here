@@ -1,3 +1,4 @@
+/* Team.module.css */
 .teamWrap {
   background: #fff;
 }
@@ -142,28 +143,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   padding: 30px 20px 20px 20px;
   background: var(--cream);
-}
-
-.carouselNav {
-  background: white;
-  border: 1px solid var(--border);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
-  color: var(--brand);
-}
-
-.carouselNav:hover {
-  background: var(--brand);
-  color: white;
 }
 
 .carouselImage {
@@ -172,29 +153,6 @@
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--brand);
-}
-
-.carouselDots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: -10px;
-  margin-bottom: 20px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.activeDot {
-  background: var(--brand);
-  width: 24px;
-  border-radius: 10px;
 }
 
 .modalBody {
@@ -293,11 +251,6 @@
 @media (max-width: 480px) {
   .foundersGrid {
     grid-template-columns: 1fr;
-  }
-  
-  .carouselNav {
-    width: 32px;
-    height: 32px;
   }
   
   .carouselImage {

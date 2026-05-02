@@ -79,7 +79,7 @@ const Navbar = ({ activeSection }) => {
       <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.navContainer}>
           <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, '#home')}>
-            <img src="/assets/logo.png" alt="Prosp.Here" className={styles.logoImg} />
+            <img src="/logo.png" alt="Prosp.Here" className={styles.logoImg} />
           </a>
           <div className={styles.navLinks}>
             {navLinks.map(link => (

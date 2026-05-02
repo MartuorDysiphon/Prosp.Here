@@ -8,7 +8,7 @@ const Footer = () => {
         <div className={styles.footerInner}>
           <div>
             <div className={styles.footerLogo}>
-              <img src="/assets/logo.png" alt="Prosp.Here" />
+              <img src="/logo.png" alt="Prosp.Here" />
             </div>
             <p className={styles.footerTagline}>A South African initiative for accounting and finance growth.</p>
           </div>

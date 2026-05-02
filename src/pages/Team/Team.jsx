@@ -1,97 +1,73 @@
+// Team.jsx
 import React, { useState } from 'react';
 import styles from './Team.module.css';
 
+// Import images
+import yolisaImg from '../../assets/team/yolisa.jpg';
+import midgeImg from '../../assets/team/midge.jpg';
+import faimaImg from '../../assets/team/faima.jpg';
+import thaboImg from '../../assets/team/faima.jpg';
+
 const Team = () => {
   const [selectedFounder, setSelectedFounder] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const founders = [
     {
       id: 1,
       name: 'Yolisa Sphambo',
-      role: 'Co Founder',
-      title: 'Strategic Leader',
+      role: 'Founder and Chairperson',
+      title: 'Bcom Accounting',
       location: 'Johannesburg, South Africa',
       description: 'Yolisa is a passionate advocate for accessible education and career guidance. She co founded Prosp.Here to bridge the gap between aspiring accounting professionals and the industry. Her vision is to create a South Africa where every student has a mentor who looks like them.',
-      hobbies: 'Reading, hiking, mentoring young professionals, playing netball',
-      funFact: 'She once walked 10 kilometers to submit a bursary application that changed her life',
+      hobbies: 'Running, Cooking, Writing(currently writing my own cookbook), and I love podcasts and I am a former radio presenter.',
+      funFact: 'I am actually the person who came up with the name Prosp.Here. It was my idea to combine “Prosper” and “Here” to reflect the organisation mission of helping students prosper right here in South Africa.',
       quote: 'The future belongs to those who prepare for it today',
-      images: [
-        '/assets/founders/yolisa1.jpg',
-        '/assets/founders/yolisa2.jpg',
-        '/assets/founders/yolisa3.jpg'
-      ]
+      image: yolisaImg
     },
     {
       id: 2,
       name: 'Midge Mtshweni',
-      role: 'Co Founder',
-      title: 'Finance Professional',
-      location: 'Pretoria, South Africa',
+      role: 'Vice Chairperson',
+      title: 'BCom Accounting & BCTA',
+      location: 'Johannesburg, South Africa',
       description: 'Midge is a finance professional who experienced firsthand the challenges of navigating the accounting profession without guidance. He co founded Prosp.Here to ensure no one faces those same barriers. He believes in the power of community and shared experiences.',
       hobbies: 'Football, chess, financial modeling, watching documentaries',
-      funFact: 'He can solve a Rubik cube in under two minutes',
+      funFact: 'I can solve a Rubik cube in under two minutes',
       quote: 'Your network is your net worth, but your mindset is your greatest asset',
-      images: [
-        '/assets/founders/midge1.jpg',
-        '/assets/founders/midge2.jpg',
-        '/assets/founders/midge3.jpg'
-      ]
+      image: midgeImg
     },
     {
       id: 3,
       name: 'Faima Shaikh',
-      role: 'Co Founder',
-      title: 'Accounting Professional',
+      role: 'Secretary',
+      title: 'BAccSci & PGDA  ',
       location: 'Durban, South Africa',
       description: 'Faima brings a unique perspective to the team with her background in accounting and her passion for educational equity. She focuses on creating resources that are accessible to students from all backgrounds. Her attention to detail ensures Prosp.Here delivers quality content.',
-      hobbies: 'Cooking, traveling, photography, volunteering at youth centres',
-      funFact: 'She has visited 15 countries and collected a pen from each one',
-      quote: 'Education is the most powerful weapon you can use to change the world',
-      images: [
-        '/assets/founders/faima1.jpg',
-        '/assets/founders/faima2.jpg',
-        '/assets/founders/faima3.jpg'
-      ]
+      hobbies: 'Reading, traveling, and creating content. I also enjoy anything creative that allows me to explore ideas and express myself.',
+      funFact: 'I can speak 3 languages fluently.',
+      quote: 'When you decide you’re not waiting to be saved, the universe starts meeting you halfway.',
+      image: faimaImg
     },
     {
       id: 4,
-      name: 'Thabo Nkosi',
+      name: 'Diva Doe',
       role: 'Co Founder',
       title: 'Strategy and Operations Lead',
       location: 'Cape Town, South Africa',
-      description: 'Thabo joined the founding team with a background in business strategy and operations. He saw the potential of Prosp.Here to scale impact across South Africa. He focuses on building partnerships with universities and corporations to expand the organisation reach.',
+      description: 'Diva joined the founding team with a background in business strategy and operations. She saw the potential of Prosp.Here to scale impact across South Africa. She focuses on building partnerships with universities and corporations to expand the organisation reach.',
       hobbies: 'Running, reading business books, podcasting, coaching youth soccer',
-      funFact: 'He ran the Two Oceans Marathon twice and finished both times',
+      funFact: 'She ran the Two Oceans Marathon twice and finished both times',
       quote: 'Small consistent actions lead to extraordinary results',
-      images: [
-        '/assets/founders/thabo1.jpg',
-        '/assets/founders/thabo2.jpg',
-        '/assets/founders/thabo3.jpg'
-      ]
+      image: thaboImg
     }
   ];
 
   const openFounderModal = (founder) => {
     setSelectedFounder(founder);
-    setCurrentImageIndex(0);
   };
 
   const closeFounderModal = () => {
     setSelectedFounder(null);
-    setCurrentImageIndex(0);
-  };
-
-  const nextImage = () => {
-    if (selectedFounder) {
-      setCurrentImageIndex((prev) => (prev + 1) % selectedFounder.images.length);
-    }
-  };
-
-  const prevImage = () => {
-    if (selectedFounder) {
-      setCurrentImageIndex((prev) => (prev - 1 + selectedFounder.images.length) % selectedFounder.images.length);
-    }
   };
 
   return (
@@ -108,7 +84,7 @@ const Team = () => {
           {founders.map((founder) => (
             <div key={founder.id} className={styles.founderCard} onClick={() => openFounderModal(founder)}>
               <div className={styles.founderImage}>
-                <img src={founder.images[0]} alt={founder.name} />
+                <img src={founder.image} alt={founder.name} />
               </div>
               <h4>{founder.name}</h4>
               <p>{founder.role}</p>
@@ -127,26 +103,11 @@ const Team = () => {
             </button>
             
             <div className={styles.modalCarousel}>
-              <button className={styles.carouselNav} onClick={prevImage}>
-                <i className="fas fa-chevron-left"></i>
-              </button>
               <img 
-                src={selectedFounder.images[currentImageIndex]} 
+                src={selectedFounder.image} 
                 alt={selectedFounder.name} 
                 className={styles.carouselImage}
               />
-              <button className={styles.carouselNav} onClick={nextImage}>
-                <i className="fas fa-chevron-right"></i>
-              </button>
-            </div>
-            <div className={styles.carouselDots}>
-              {selectedFounder.images.map((_, idx) => (
-                <span 
-                  key={idx} 
-                  className={`${styles.dot} ${currentImageIndex === idx ? styles.activeDot : ''}`}
-                  onClick={() => setCurrentImageIndex(idx)}
-                />
-              ))}
             </div>
             
             <div className={styles.modalBody}>

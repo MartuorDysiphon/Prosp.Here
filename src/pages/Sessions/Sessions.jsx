@@ -244,7 +244,7 @@ const Sessions = () => {
       </head>
       <body>
         <div class="receipt">
-          <div class="logo"><img src="/assets/logo.png" alt="Prosp.Here"></div>
+          <div class="logo"><img src="/logo.png" alt="Prosp.Here"></div>
           <h1>RSVP Confirmation</h1>
           <div class="subtitle">You are confirmed for this event</div>
           <div class="badge"><strong>${receiptData.rsvpNumber}</strong></div>
@@ -368,7 +368,7 @@ const Sessions = () => {
           <div className={styles.formContainer} onClick={(e) => e.stopPropagation()}>
             <div className={styles.formHeader}>
               <div className={styles.formLogo}>
-                <img src="/assets/logo.png" alt="Prosp.Here" />
+                <img src="/logo.png" alt="Prosp.Here" />
               </div>
               <button className={styles.closeFormBtn} onClick={closeForm}>
                 <i className="fas fa-times"></i>
@@ -476,7 +476,7 @@ const Sessions = () => {
           <div className={styles.receiptContainer} onClick={(e) => e.stopPropagation()}>
             <div id="receiptContent">
               <div className={styles.receiptLogo}>
-                <img src="/assets/logo.png" alt="Prosp.Here" />
+                <img src="/logo.png" alt="Prosp.Here" />
               </div>
               <h2 className={styles.receiptTitle}>RSVP Confirmation</h2>
               <p className={styles.receiptSubtitle}>You are confirmed for this event</p>
