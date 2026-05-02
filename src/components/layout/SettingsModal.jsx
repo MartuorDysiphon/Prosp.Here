@@ -114,7 +114,7 @@ const SettingsModal = ({ isOpen, onClose }) => {
 
         <div className={styles.modalHeader}>
           <div className={styles.logoWrapper}>
-            <img src="/assets/logo.png" alt="Prosp.Here" className={styles.modalLogo} />
+            <img src="/logo.png" alt="Prosp.Here" className={styles.modalLogo} />
           </div>
           <h2 className={styles.modalTitle}>Account Settings</h2>
           <p className={styles.modalSubtitle}>Manage your profile and account preferences</p>

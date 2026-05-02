@@ -13,15 +13,15 @@ const Footer = () => {
             <p className={styles.footerTagline}>A South African initiative for accounting and finance growth.</p>
           </div>
           <div className={styles.footerSocials}>
-            <a href="https://www.linkedin.com/company/prosphere" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            {/* <a href="https://www.linkedin.com/company/prosphere" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/prosp.here" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            </a> */}
+            <a href="https://www.instagram.com/prosp.here/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://twitter.com/prosphere" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+            {/* <a href="https://twitter.com/prosphere" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
               <i className="fab fa-x-twitter"></i>
-            </a>
+            </a> */}
           </div>
         </div>
         <p className={styles.footerBottom}>© 2026 Prosp.Here — Beyond the Balance Sheets. Empowering learners, students, and trainees across South Africa.</p>

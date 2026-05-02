@@ -32,8 +32,8 @@ const Hero = () => {
             </div>
             <div className={styles.heroStats}>
               <div className={styles.statItem}><span className={styles.statNumber}>8+</span><div className={styles.statLabel}>Bodies</div></div>
-              <div className={styles.statItem}><span className={styles.statNumber}>8</span><div className={styles.statLabel}>Experts</div></div>
-              <div className={styles.statItem}><span className={styles.statNumber}>700+</span><div className={styles.statLabel}>Members</div></div>
+              <div className={styles.statItem}><span className={styles.statNumber}>4</span><div className={styles.statLabel}>Experts</div></div>
+              <div className={styles.statItem}><span className={styles.statNumber}>100+</span><div className={styles.statLabel}>Members</div></div>
               <div className={styles.statItem}><span className={styles.statNumber}>9</span><div className={styles.statLabel}>Provinces</div></div>
             </div>
           </div>

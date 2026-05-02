@@ -560,7 +560,7 @@ const Sessions = () => {
               
               <div className={styles.receiptFooter}>
                 <p>This is your official RSVP confirmation. Please save this for your records.</p>
-                <p>For any questions, contact us at hello@prosphere.org.za</p>
+                <p>For any questions, contact us at prosp.hereteam@gmail.com</p>
               </div>
             </div>
             

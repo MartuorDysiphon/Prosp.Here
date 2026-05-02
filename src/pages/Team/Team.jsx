@@ -6,7 +6,7 @@ import styles from './Team.module.css';
 import yolisaImg from '../../assets/team/yolisa.jpg';
 import midgeImg from '../../assets/team/midge.jpg';
 import faimaImg from '../../assets/team/faima.jpg';
-import thaboImg from '../../assets/team/faima.jpg';
+import divaImg from '../../assets/team/diva.jpeg';
 
 const Team = () => {
   const [selectedFounder, setSelectedFounder] = useState(null);
@@ -50,15 +50,15 @@ const Team = () => {
     },
     {
       id: 4,
-      name: 'Diva Doe',
-      role: 'Content Director',
-      title: 'PhD in Business Strategy',
+      name: 'Diva Ugbobuaku ',
+      role: 'People Officer',
+      title: 'Bcom Financial Sciences & PGDA',
       location: 'Cape Town, South Africa',
-      description: 'Diva joined the founding team with a background in business strategy and operations. She saw the potential of Prosp.Here to scale impact across South Africa. She focuses on building partnerships with universities and corporations to expand the organisation reach.',
-      hobbies: 'Running, reading business books, podcasting, coaching youth soccer',
-      funFact: 'She ran the Two Oceans Marathon twice and finished both times',
-      quote: 'Small consistent actions lead to extraordinary results',
-      image: thaboImg
+      description: 'As a People Officer at Prosp.her, I focus on building a connected community of learners, students, and young professionals. I coordinate mentorship programmes, support the delivery of key initiatives and events, and serve as a main point of contact to ensure strong engagement. I also provide feedback and insights to continuously improve the impact and effectiveness of Prosp.her programmes.',
+      hobbies: 'Padel enthusiast, Parkrun regular, casual 5K runner, and occasional blog writer.',
+      funFact: 'I\'ve traveled to all 9 Provinces in South Africa',
+      quote: 'If you want to gain momentum and improve your motivation, begin by setting goals that are worthwhile but highly achievable. Master the basics. Then practice them every day without fail.” — John C. Maxwell from his book, “The 15 Invaluable Laws of Growth',
+      image: divaImg
     }
   ];
 
@@ -75,7 +75,7 @@ const Team = () => {
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
           <div className="label-tag"><i className="fas fa-users"></i> The Humans Behind It</div>
-          <h2 className="section-heading">Meet the Founders</h2>
+          <h2 className="section-heading">Meet the Team</h2>
           <p className="section-sub">The visionaries who started Prosp.Here in a Wits tutorial room</p>
         </div>
 

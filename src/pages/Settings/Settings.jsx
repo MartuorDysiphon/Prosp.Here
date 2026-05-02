@@ -295,7 +295,6 @@ const Settings = () => {
             )}
           </div>
 
-          {/* Account Management Section */}
           <div className={styles.settingsCard}>
             <div className={styles.cardHeader}>
               <i className="fas fa-shield-alt"></i>
