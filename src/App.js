@@ -6,6 +6,7 @@ import About from './pages/About/About';
 import Compass from './pages/Compass/Compass';
 import Sessions from './pages/Sessions/Sessions';
 import Team from './pages/Team/Team';
+import Blog from './pages/Blog/Blog';
 import Contact from './pages/Contact/Contact';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'compass', 'sessions', 'professionals', 'contact'];
+      const sections = ['home', 'about', 'compass', 'sessions', 'professionals', 'blog', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -64,6 +65,7 @@ function App() {
         <Compass />
         <Sessions />
         <Team />
+        <Blog />
         <Contact />
       </main>
       <Footer />

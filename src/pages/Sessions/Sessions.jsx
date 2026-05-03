@@ -73,12 +73,12 @@ const Sessions = () => {
       role: 'Audit Trainee at Baker Tilly Tuffias',
       image: kiaraImage
     },
-    {
-      id: 2,
-      name: 'Linda Ndungane',
-      role: 'Employer Branding Specialist at AGSA',
-      image: kiaraImage
-    },
+    // {
+    //   id: 2,
+    //   name: 'Linda Ndungane',
+    //   role: 'Employer Branding Specialist at AGSA',
+    //   image: kiaraImage
+    // },
     {
       id: 3,
       name: 'Mpendulo Gwebo',

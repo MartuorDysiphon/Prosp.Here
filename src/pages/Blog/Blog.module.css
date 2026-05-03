@@ -1,0 +1,324 @@
+.blogWrap {
+  background: #fff;
+  padding: 60px 0 100px;
+}
+
+.blogHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.labelTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e4ede9;
+  padding: 6px 16px;
+  border-radius: 60px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e88500;
+  margin-bottom: 20px;
+}
+
+.blogTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  color: #1a3228;
+  margin-bottom: 12px;
+}
+
+.blogSubtitle {
+  font-size: 0.95rem;
+  color: #7a9188;
+}
+
+.postCard {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #e4ede9;
+}
+
+.postCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(26, 50, 40, 0.08);
+}
+
+.postImage {
+  height: 240px;
+  overflow: hidden;
+}
+
+.postImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.postCard:hover .postImage img {
+  transform: scale(1.03);
+}
+
+.postContent {
+  padding: 32px;
+}
+
+.postMeta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  font-size: 0.75rem;
+  color: #7a9188;
+}
+
+.postMeta i {
+  margin-right: 6px;
+}
+
+.postContent h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  color: #1a3228;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.postContent p {
+  font-size: 0.9rem;
+  color: #4a7066;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.postAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e4ede9;
+}
+
+.authorAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e88500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.postAuthor strong {
+  font-size: 0.85rem;
+  color: #1a3228;
+}
+
+.postAuthor span {
+  font-size: 0.7rem;
+  color: #7a9188;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 31, 26, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 28px;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalClose {
+  position: sticky;
+  top: 15px;
+  right: 15px;
+  float: right;
+  background: #f7f1e8;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  color: #4a7066;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  margin: 15px 15px 0 0;
+}
+
+.modalClose:hover {
+  background: #e88500;
+  color: white;
+}
+
+.modalImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.modalBody {
+  padding: 28px 32px 32px;
+}
+
+.modalMeta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  font-size: 0.75rem;
+  color: #7a9188;
+}
+
+.modalMeta i {
+  margin-right: 4px;
+}
+
+.modalTitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  color: #1a3228;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.modalAuthor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modalAuthorAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e88500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.modalAuthor strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #1a3228;
+}
+
+.modalAuthor span {
+  font-size: 0.7rem;
+  color: #7a9188;
+}
+
+.modalDivider {
+  height: 1px;
+  background: #e4ede9;
+  margin: 20px 0;
+}
+
+.modalText p {
+  font-size: 0.9rem;
+  color: #2c5044;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.modalText p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .blogWrap {
+    padding: 40px 0 60px;
+  }
+  
+  .blogTitle {
+    font-size: 2rem;
+  }
+  
+  .postImage {
+    height: 180px;
+  }
+  
+  .postContent {
+    padding: 24px;
+  }
+  
+  .postContent h2 {
+    font-size: 1.3rem;
+  }
+  
+  .modalBody {
+    padding: 20px 24px 24px;
+  }
+  
+  .modalTitle {
+    font-size: 1.3rem;
+  }
+  
+  .modalImage {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .postContent {
+    padding: 20px;
+  }
+  
+  .postMeta {
+    gap: 12px;
+  }
+  
+  .modalBody {
+    padding: 16px 20px 20px;
+  }
+  
+  .modalTitle {
+    font-size: 1.2rem;
+  }
+}

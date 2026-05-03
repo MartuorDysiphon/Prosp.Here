@@ -71,6 +71,7 @@ const Navbar = ({ activeSection }) => {
     { href: '#compass', label: 'Varsity Compass', id: 'compass' },
     { href: '#sessions', label: 'Sessions', id: 'sessions' },
     { href: '#professionals', label: 'Team', id: 'professionals' },
+    { href: '#blog', label: 'Blog', id: 'blog' },
     { href: '#contact', label: 'Contact', id: 'contact' },
   ];
 
@@ -123,7 +124,7 @@ const Navbar = ({ activeSection }) => {
             href={link.href}
             onClick={(e) => handleLinkClick(e, link.href)}
           >
-            <i className={`fas ${link.id === 'home' ? 'fa-house' : link.id === 'about' ? 'fa-leaf' : link.id === 'compass' ? 'fa-graduation-cap' : link.id === 'sessions' ? 'fa-video' : link.id === 'professionals' ? 'fa-users' : 'fa-envelope'}`}></i>
+            <i className={`fas ${link.id === 'home' ? 'fa-house' : link.id === 'about' ? 'fa-leaf' : link.id === 'compass' ? 'fa-graduation-cap' : link.id === 'sessions' ? 'fa-video' : link.id === 'professionals' ? 'fa-users' : link.id === 'blog' ? 'fa-blog' : 'fa-envelope'}`}></i>
             {link.label}
           </a>
         ))}
