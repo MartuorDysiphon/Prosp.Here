@@ -19,7 +19,7 @@ const Team = () => {
       title: 'Bcom Accounting',
       location: 'Johannesburg, South Africa',
       description: 'Yolisa is a passionate advocate for accessible education and career guidance. She co founded Prosp.Here to bridge the gap between aspiring accounting professionals and the industry. Her vision is to create a South Africa where every student has a mentor who looks like them.',
-      hobbies: 'Running, Cooking, Writing(currently writing my own cookbook), and I love podcasts and I am a former radio presenter.',
+      hobbies: 'Running, Cooking, Writing(I\'m currently writing my own cookbook), and I love podcasts and I am a former radio presenter.',
       funFact: 'I am actually the person who came up with the name Prosp.Here. It was my idea to combine “Prosper” and “Here” to reflect the organisation mission of helping students prosper right here in South Africa.',
       quote: 'The future belongs to those who prepare for it today',
       image: yolisaImg
