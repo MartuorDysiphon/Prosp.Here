@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './Testimonials.module.css';
 
 // Import author images
-import katlegoImage from '../../assets/testimonials/katlego.jpg';
-import thandoImage from '../../assets/testimonials/thando.jpg';
-import leratoImage from '../../assets/testimonials/lerato.jpg';
+import katlegoImage from '../../assets/testimonials/kat.jpg';
+import thandoImage from '../../assets/testimonials/kat.jpg';
+import leratoImage from '../../assets/testimonials/kat.jpg';
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
