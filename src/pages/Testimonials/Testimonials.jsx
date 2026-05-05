@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './Testimonials.module.css';
 
 // Import author images
-import katlegoImage from '../../assets/testimonials/kat.jpg';
-import thandoImage from '../../assets/testimonials/kat.jpg';
-import leratoImage from '../../assets/testimonials/kat.jpg';
+import katlegoImage from '../../assets/testimonials/katlego.jpg';
+import thandoImage from '../../assets/testimonials/thando.jpg';
+import leratoImage from '../../assets/testimonials/lerato.jpg';
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -38,9 +38,10 @@ const Testimonials = () => {
     }
   ];
 
-  const nextTestimonial = () => {
+  // Wrap nextTestimonial in useCallback to prevent recreation on every render
+  const nextTestimonial = useCallback(() => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-  };
+  }, [testimonials.length]);
 
   const prevTestimonial = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
@@ -54,6 +55,7 @@ const Testimonials = () => {
     }
   };
 
+  // Auto-play functionality with proper dependency
   useEffect(() => {
     if (isAutoPlaying) {
       autoPlayRef.current = setInterval(nextTestimonial, 5000);
@@ -61,7 +63,7 @@ const Testimonials = () => {
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, nextTestimonial]);
 
   const handleMouseEnter = () => {
     setIsAutoPlaying(false);
