@@ -25,6 +25,7 @@ const Sessions = () => {
   const [receiptData, setReceiptData] = useState(null);
   const [showAuthWarning, setShowAuthWarning] = useState(false);
   const [pendingSession, setPendingSession] = useState(null);
+  const [submitError, setSubmitError] = useState('');
 
   const sessions = [
     {
@@ -73,12 +74,6 @@ const Sessions = () => {
       role: 'Audit Trainee at Baker Tilly Tuffias',
       image: kiaraImage
     },
-    // {
-    //   id: 2,
-    //   name: 'Linda Ndungane',
-    //   role: 'Employer Branding Specialist at AGSA',
-    //   image: kiaraImage
-    // },
     {
       id: 3,
       name: 'Mpendulo Gwebo',
@@ -161,6 +156,7 @@ const Sessions = () => {
     setShowForm(true);
     setSubmitted(false);
     setReceiptData(null);
+    setSubmitError('');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -173,15 +169,36 @@ const Sessions = () => {
   };
 
   const generateRSVPNumber = () => {
-    const randomNum = Math.floor(10000 + Math.random() * 90000);
-    return `PROSPRSVP${randomNum}`;
+    const timestamp = Date.now().toString().slice(-6);
+    const randomNum = Math.floor(1000 + Math.random() * 9000);
+    return `PROSP${timestamp}${randomNum}`;
   };
+
+  // Formspree endpoint - REPLACE WITH YOUR FORMSPREE FORM ID
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvyezll';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
 
     const rsvpNumber = generateRSVPNumber();
+    
+    // Prepare data for Formspree
+    const formspreeData = {
+      name: formData.name,
+      surname: formData.surname,
+      occupation: formData.occupation,
+      age: formData.age,
+      session: selectedSession.title,
+      sessionDate: selectedSession.date,
+      sessionTime: selectedSession.time,
+      rsvpNumber: rsvpNumber,
+      email: user?.primaryEmailAddress?.emailAddress || 'Not provided',
+      userId: user?.id || 'Not provided',
+      _subject: `New RSVP: ${selectedSession.title} - ${formData.name} ${formData.surname}`
+    };
+
     const fullReceiptData = {
       ...formData,
       rsvpNumber: rsvpNumber,
@@ -194,24 +211,47 @@ const Sessions = () => {
       meetingPassword: selectedSession.meetingPassword
     };
 
-    setTimeout(() => {
+    try {
+      // Send to Formspree
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formspreeData),
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        console.log('RSVP Successfully sent to Formspree:', result);
+        
+        // Show receipt to user
+        setReceiptData(fullReceiptData);
+        setSubmitted(true);
+        setShowForm(false);
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+      
+    } catch (error) {
+      console.error('Error submitting RSVP:', error);
+      setSubmitError('Failed to submit RSVP. Please try again or contact support.');
+      
+      // Fallback: Still show receipt even if API fails
       setReceiptData(fullReceiptData);
       setSubmitted(true);
       setShowForm(false);
+    } finally {
       setIsSubmitting(false);
-      
-      console.log('RSVP Submitted:', {
-        ...fullReceiptData,
-        email: user?.primaryEmailAddress?.emailAddress || 'Not provided',
-        userId: user?.id || 'Not provided',
-        timestamp: new Date().toISOString()
-      });
-    }, 500);
+    }
   };
 
   const closeForm = () => {
     setShowForm(false);
     setSelectedSession(null);
+    setSubmitError('');
     setFormData({
       name: (isLoaded && isSignedIn && user?.firstName) || '',
       surname: (isLoaded && isSignedIn && user?.lastName) || '',
@@ -282,7 +322,7 @@ const Sessions = () => {
           </div>
           <div class="footer">
             <p>This is your official RSVP confirmation. Please save this for your records.</p>
-            <p>For any questions, contact us at hello@prosphere.org.za</p>
+            <p>For any questions, contact us at prosp.hereteam@gmail.com</p>
           </div>
         </div>
       </body>
@@ -393,6 +433,12 @@ const Sessions = () => {
             </div>
             <h3 className={styles.formTitle}>RSVP for {selectedSession?.title}</h3>
             <p className={styles.formSubtitle}>Please complete the form below to secure your spot</p>
+            
+            {submitError && (
+              <div className={styles.errorMessage}>
+                <i className="fas fa-exclamation-triangle"></i> {submitError}
+              </div>
+            )}
             
             <form onSubmit={handleSubmit} className={styles.rsvpForm}>
               <div className={styles.formRow}>
