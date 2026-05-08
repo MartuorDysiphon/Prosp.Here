@@ -6,6 +6,7 @@ import About from './pages/About/About';
 import Compass from './pages/Compass/Compass';
 import Sessions from './pages/Sessions/Sessions';
 import Team from './pages/Team/Team';
+import Principles from './pages/Principles/Principles';
 import Blog from './pages/Blog/Blog';
 import Testimonials from './pages/Testimonials/Testimonials';
 import Contact from './pages/Contact/Contact';
@@ -66,6 +67,7 @@ function App() {
         <Compass />
         <Sessions />
         <Team />
+        <Principles />
         <Blog />
         <Testimonials />
         <Contact />

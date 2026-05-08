@@ -80,10 +80,10 @@ button {
   letter-spacing: .12em;
   text-transform: uppercase;
   color: #0f1f1a;
-  background: rgb(255, 255, 255);
-  border: 1px solid var(--border);
+  /* background: rgb(255, 255, 255); */
+  border-bottom: 1px solid var(--border);
   padding: .35rem 1rem;
-  border-radius: var(--radius-xl);
+  border-bottom-left-radius: var(--radius-xl);
   margin-bottom: 1.2rem;
 }
 

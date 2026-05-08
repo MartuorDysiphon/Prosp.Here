@@ -1,4 +1,7 @@
 .hero {
+  background-image: url(../../assets/bg.png);
+  background-size: cover;
+  background-position: center;
   position: relative;
   min-height: 92vh;
   display: flex;
@@ -10,11 +13,11 @@
 .heroBgPattern {
   position: absolute;
   inset: 0;
-  background-image:
-    radial-gradient(circle at 75% 20%, rgba(194, 93, 30, .08) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(26, 50, 40, .05) 0%, transparent 50%);
-  pointer-events: none;
-}
+  background-image: url(../../assets/bg.png);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.45;
+  z-index: 0;}
 
 .heroGrid {
   display: grid;
@@ -94,19 +97,15 @@
 .heroVisual {
   width: 100%;
   height: 100%;
-  background: url('../../assets/hero.jpg') center/cover no-repeat;
-  border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) 0;
-  box-shadow: var(--shadow-lg);
+  background: url('../../assets/road.png') center/cover;
   overflow: hidden;
   position: relative;
-  background-color: var(--cream);
 }
 
 .heroVisual::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(194, 93, 30, .15) 0%, transparent 60%);
 }
 
 .heroFloatCard {

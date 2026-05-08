@@ -16,11 +16,12 @@ const Team = () => {
       id: 1,
       name: 'Yolisa Sphambo',
       role: 'Founder and Chairperson',
-      title: 'Bcom Accounting',
+      designation: 'ACCA Trainee',
+      title: 'Bcom Accounting @ Wits University',
       location: 'Johannesburg, South Africa',
       description: 'Yolisa is a passionate advocate for accessible education and career guidance. She co founded Prosp.Here to bridge the gap between aspiring accounting professionals and the industry. Her vision is to create a South Africa where every student has a mentor who looks like them.',
       hobbies: 'Running, Cooking, Writing(I\'m currently writing my own cookbook), and I love podcasts and I am a former radio presenter.',
-      funFact: 'I am actually the person who came up with the name Prosp.Here. It was my idea to combine “Prosper” and “Here” to reflect the organisation mission of helping students prosper right here in South Africa.',
+      funFact: 'I am actually the person who came up with the name Prosp.Here. It was my idea to combine "Prosper" and "Here" to reflect the organisation mission of helping students prosper right here in South Africa.',
       quote: 'The future belongs to those who prepare for it today',
       image: yolisaImg
     },
@@ -28,7 +29,8 @@ const Team = () => {
       id: 2,
       name: 'Midge Mtshweni',
       role: 'Vice Chairperson',
-      title: 'BCom Accounting & BCTA',
+      designation: 'SAICA Trainee',
+      title: 'BCom Accounting @ Wits University',
       location: 'Johannesburg, South Africa',
       description: 'Midge is a finance professional who experienced firsthand the challenges of navigating the accounting profession without guidance. He co founded Prosp.Here to ensure no one faces those same barriers. He believes in the power of community and shared experiences.',
       hobbies: 'Football, chess, financial modeling, watching documentaries',
@@ -40,7 +42,8 @@ const Team = () => {
       id: 3,
       name: 'Faima Shaikh',
       role: 'Secretary',
-      title: 'BAccSci & PGDA  ',
+      designation: 'SAICA Student',
+      title: 'Bachelor of Accounting Sciences @ UNISA',
       location: 'Port Elizabeth, South Africa',
       description: 'Faima brings a unique perspective to the team with her background in accounting and her passion for educational equity. She focuses on creating resources that are accessible to students from all backgrounds. Her attention to detail ensures Prosp.Here delivers quality content.',
       hobbies: 'Reading, traveling, and creating content. I also enjoy anything creative that allows me to explore ideas and express myself.',
@@ -50,14 +53,15 @@ const Team = () => {
     },
     {
       id: 4,
-      name: 'Diva Ugbobuaku ',
+      name: 'Diva Ugbobuaku',
       role: 'People Officer',
-      title: 'PDGDip(FASS) & BAccSci',
+      designation: 'Qualified Professional Accountant (SA)',
+      title: 'Bcom Financial Sciences @ UP',
       location: 'Johannesburg, South Africa',
       description: 'As a People Officer at Prosp.her, I focus on building a connected community of learners, students, and young professionals. I coordinate mentorship programmes, support the delivery of key initiatives and events, and serve as a main point of contact to ensure strong engagement. I also provide feedback and insights to continuously improve the impact and effectiveness of Prosp.her programmes.',
       hobbies: 'Padel enthusiast, Parkrun regular, casual 5K runner, and occasional blog writer.',
       funFact: 'I\'ve traveled to all 9 Provinces in South Africa',
-      quote: 'If you want to gain momentum and improve your motivation, begin by setting goals that are worthwhile but highly achievable. Master the basics. Then practice them every day without fail.” — John C. Maxwell from his book, “The 15 Invaluable Laws of Growth',
+      quote: 'If you want to gain momentum and improve your motivation, begin by setting goals that are worthwhile but highly achievable. Master the basics. Then practice them every day without fail." — John C. Maxwell from his book, "The 15 Invaluable Laws of Growth',
       image: divaImg
     }
   ];
@@ -88,6 +92,7 @@ const Team = () => {
               </div>
               <h4>{founder.name}</h4>
               <p>{founder.role}</p>
+              <p className={styles.designationBadge}>{founder.designation}</p>
               <button className={styles.viewProfileBtn}>View Profile</button>
             </div>
           ))}
@@ -113,6 +118,7 @@ const Team = () => {
             <div className={styles.modalBody}>
               <h2>{selectedFounder.name}</h2>
               <p className={styles.modalRole}>{selectedFounder.role} | {selectedFounder.title}</p>
+              <p className={styles.modalDesignation}>{selectedFounder.designation}</p>
               <p className={styles.modalLocation}><i className="fas fa-map-marker-alt"></i> {selectedFounder.location}</p>
               
               <div className={styles.modalSection}>

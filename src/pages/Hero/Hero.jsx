@@ -19,9 +19,11 @@ const Hero = () => {
       <div className="container">
         <div className={styles.heroGrid}>
           <div className={styles.heroContent}>
-            <div className="label-tag"><i className="fas fa-seedling"></i> RSA Accounting NGO</div>
+            <div className="label-tag"> RSA Accounting NGO</div>
             <h1>Financial Career <span className={styles.heroHighlight}>with clarity</span></h1>
-            <p className={styles.heroDescription}>Varsity Compass, live virtual sessions, and real mentors from SAICA, ACCA, CIMA. All in one trusted space, no gatekeeping, no fees.</p>
+            <p className={styles.heroDescription}>Helping Individuals build successful careers in finance and accounting through Varsity Compass, 
+              live virtual sessions, and mentorship from professionals connected to PROSP.HERE and . Gain real guidance, industry insight, and support in 
+              one trusted space built for future finance professionals.</p>
             <div className={styles.heroCtas}>
               <a href="#compass" className="btn-primary" onClick={(e) => handleScroll(e, '#compass')}>
                 <i className="fas fa-graduation-cap"></i> Varsity Compass
@@ -30,19 +32,9 @@ const Hero = () => {
                 <i className="fas fa-video"></i> View sessions
               </a>
             </div>
-            <div className={styles.heroStats}>
-              <div className={styles.statItem}><span className={styles.statNumber}>8+</span><div className={styles.statLabel}>Bodies</div></div>
-              <div className={styles.statItem}><span className={styles.statNumber}>4</span><div className={styles.statLabel}>Experts</div></div>
-              <div className={styles.statItem}><span className={styles.statNumber}>100+</span><div className={styles.statLabel}>Members</div></div>
-              <div className={styles.statItem}><span className={styles.statNumber}>9</span><div className={styles.statLabel}>Provinces</div></div>
-            </div>
           </div>
           <div className={`${styles.heroVisualWrap} reveal`}>
             <div className={styles.heroVisual}></div>
-            <div className={styles.heroFloatCard}>
-              <div className={styles.icon}><i className="fas fa-check-circle"></i></div>
-              <div className={styles.text}><strong>Free for everyone</strong>No fees included.</div>
-            </div>
           </div>
         </div>
       </div>
