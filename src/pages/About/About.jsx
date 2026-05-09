@@ -6,77 +6,93 @@ const About = () => {
     {
       icon: 'fas fa-eye',
       title: 'Exposure',
-      desc: 'Early and accurate information about careers'
+      description: 'Timely, accurate information about career paths, bursaries, and industry requirements, delivered before deadlines close.'
     },
     {
       icon: 'fas fa-graduation-cap',
       title: 'Education',
-      desc: 'Academic and career development support'
+      description: 'Practical training, CV workshops, and academic resources that transform classroom knowledge into career readiness.'
     },
     {
       icon: 'fas fa-handshake',
       title: 'Mentorship',
-      desc: 'Guidance from those who have walked the path'
+      description: 'Direct access to professionals who have navigated the same path and understand the South African context.'
     },
     {
       icon: 'fas fa-plug',
       title: 'Access',
-      desc: 'Connecting people to opportunities and networks'
+      description: 'Connections to internships, graduate programmes, and professional networks that would otherwise remain out of reach.'
     },
     {
       icon: 'fas fa-heart',
       title: 'Inclusion',
-      desc: 'Creating space for all genders and pathways'
+      description: 'Intentional space for women, underrepresented groups, and students from all backgrounds.'
     }
   ];
 
   return (
-    <section id="about" className={styles.aboutWrap}>
+    <section className={styles.about}>
       <div className="container">
         {/* Header */}
         <div className={styles.header}>
-          <div className="label-tag">
-            <i className="fas fa-book-open"></i> Our Story
+          <span className={styles.eyebrow}>Who we are</span>
+          <h1>Building a better path<br />into South Africa's<br />accounting profession</h1>
+          <div className={styles.headerLine}></div>
+        </div>
+
+        {/* Problem + Response Grid */}
+        <div className={styles.originGrid}>
+          <div className={styles.originLeft}>
+            <h3>The origin</h3>
+            <p>
+              Late 2024. Yolisa and Midge were final-year BCom Accounting students at Wits. 
+              Both were about to graduate, and neither knew when to apply for vacation work, 
+              how to tell SAICA from ACCA, or which bursaries had already closed.
+            </p>
+            <p>
+              They realised if it was this hard for them at Wits, students in Mthatha, 
+              Kimberley, or Limpopo had no chance. So they decided to build what they wished they had.
+            </p>
           </div>
-          <h2 className="section-heading">From uncertainty to impact</h2>
-          <p className="section-sub">
-            Born in a Wits tutorial room. Built for Mzansi.
-          </p>
+          <div className={styles.originRight}>
+            <h3>What we believe</h3>
+            <p>
+              Information should be free. Mentorship should be accessible. And no student 
+              should navigate the accounting profession alone.
+            </p>
+            <p>
+              Prosp.Here exists to remove the gatekeeping, connecting students across South Africa 
+              with real professionals, real opportunities, and real guidance. No fees. No barriers.
+            </p>
+          </div>
         </div>
 
-        {/* Story Text - plain, no card */}
-        <div className={styles.storyText}>
-          <p>
-            <strong>Prosp.Here</strong> started in <strong>2024</strong> when a group of final year Wits accounting students 
-            realised the path to becoming a CA was broken.
-          </p>
-          <p>
-            Students did not know when bursaries opened. They could not tell <strong>SAICA from ACCA</strong>. 
-            They applied for vac work too late. And worst of all, <strong>no mentors who looked like them.</strong>
-          </p>
-          <p>
-            By <strong>2025, Prosp.Here became a registered NGO</strong>. Now we connect students across South Africa with real professionals 
-            from <strong>SAICA, ACCA, CIMA, SAIPA, SAIT, and IRBA</strong>. Free Varsity Compass, monthly panels, 
-            WhatsApp mentorship. <strong>No fees. No gatekeeping. Just help.</strong>
-          </p>
-        </div>
-
-        {/* Key Pillars Section - 5 cards */}
+        {/* Pillars */}
         <div className={styles.pillarsSection}>
           <div className={styles.sectionHeader}>
-            <h3>Key Pillars</h3>
+            <span className={styles.eyebrow}>Our framework</span>
+            <h2>Five pillars that guide our work</h2>
+            <p>Every programme, resource, and partnership is built on these foundations.</p>
           </div>
           <div className={styles.pillarsGrid}>
-            {pillars.map((pillar, idx) => (
-              <div key={idx} className={styles.pillarCard}>
+            {pillars.map((pillar, index) => (
+              <div key={index} className={styles.pillar}>
                 <div className={styles.pillarIcon}>
                   <i className={pillar.icon}></i>
                 </div>
-                <h4>{pillar.title}</h4>
-                <p>{pillar.desc}</p>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.description}</p>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Closing statement */}
+        <div className={styles.closing}>
+          <p>
+            <span>Prosp.Here</span> started in a Wits tutorial room. 
+            Now we help students across South Africa navigate the same journey.
+          </p>
         </div>
       </div>
     </section>

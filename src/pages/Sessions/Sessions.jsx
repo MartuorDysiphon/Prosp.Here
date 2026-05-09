@@ -342,7 +342,7 @@ const Sessions = () => {
       <div className="container">
         <div className={styles.header}>
           <div className="label-tag">
-            <i className="fas fa-video"></i> Free Events
+            Free Events
           </div>
           <h2 className="section-heading">Virtual Sessions</h2>
           <p className="section-sub">
@@ -376,8 +376,7 @@ const Sessions = () => {
         {/* Panelists Section with Images */}
         <div className={styles.panelistsSection}>
           <div className={styles.sectionHeader}>
-            <i className="fas fa-users"></i>
-            <h2>Previous Session Panelists</h2>
+            <h2>Previous Session Guests</h2>
             <p>Industry professionals who shared their insights and experiences</p>
           </div>
           <div className={styles.panelistsCarousel}>
