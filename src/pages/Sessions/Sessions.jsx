@@ -42,7 +42,7 @@ const Sessions = () => {
     },
     {
       id: 2,
-      title: 'Ask aCA Open Floor',
+      title: 'Ask a CA Open Floor',
       date: 'June 16 2026',
       time: '6:00 PM–9:00 PM',
       platform: 'Microsoft Teams',
