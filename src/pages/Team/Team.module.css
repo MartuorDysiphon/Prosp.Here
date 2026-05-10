@@ -91,7 +91,7 @@
 }
 
 .founderModalContent {
-  background: white;
+  background: #fff;
   border-radius: 32px;
   max-width: 600px;
   width: 100%;
@@ -117,13 +117,13 @@
   top: 15px;
   right: 15px;
   float: right;
-  background: var(--cream);
-  border: none;
+  background: #fff;
+  border: 1px solid var(--brand);
   width: 36px;
   height: 36px;
   border-radius: 50%;
   font-size: 1rem;
-  color: #000;
+  color: var(--brand);
   cursor: pointer;
   display: flex;
   align-items: center;

@@ -163,7 +163,7 @@ const Sessions = () => {
   };
 
   // Formspree endpoint - REPLACE WITH YOUR FORMSPREE FORM ID
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xwvyezll';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojrpkap';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
