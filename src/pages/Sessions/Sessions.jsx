@@ -30,39 +30,27 @@ const Sessions = () => {
   const sessions = [
     {
       id: 1,
-      title: 'Beyond the Balance Sheets',
-      date: 'April 8 2026',
-      time: '6:30 PM',
+      title: 'Ethical Dillemmas',
+      date: 'May 27 2026',
+      time: '8:30 PM–9:00 PM',
       platform: 'Microsoft Teams',
       platformType: 'teams',
       location: 'Online',
-      meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_ABC123%40thread.v2',
-      meetingPassword: 'ProspHere2026',
-      description: 'Flagship panel with ACCA, SAICA, and CIMA professionals sharing unfiltered stories about the journey to designation.'
+      meetingLink: 'https://teams.microsoft.com/meet/325778606740134?p=BGFK5IXio9Sdiy8P7A',
+      meetingPassword: '2pY2cP9e',
+      description: 'Join us for an engaging discussion on the ethical challenges faced by accounting professionals in today\'s dynamic business environment.'
     },
     {
       id: 2,
-      title: 'CV Clinic and Learnerships',
-      date: 'April 15 2026',
-      time: '5:00 PM',
-      platform: 'Zoom',
-      platformType: 'zoom',
-      location: 'Online',
-      meetingLink: 'https://zoom.us/j/123456789',
-      meetingPassword: 'ProspHereCV',
-      description: 'Get CV reviews and learn about SAICA articles, trainee contracts, and how to land your first opportunity.'
-    },
-    {
-      id: 3,
-      title: 'Ask a CA Open Floor',
-      date: 'April 22 2026',
-      time: '7:00 PM',
+      title: 'Ask aCA Open Floor',
+      date: 'June 16 2026',
+      time: '6:00 PM–9:00 PM',
       platform: 'Microsoft Teams',
       platformType: 'teams',
       location: 'Online',
-      meetingLink: 'https://teams.microsoft.com/l/meetup-join/19%3ameeting_XYZ789%40thread.v2',
-      meetingPassword: 'AskCA2026',
-      description: 'Anonymous question and answer session with newly qualified Chartered Accountants covering exams, mental health, burnout, and salary.'
+      meetingLink: 'https://teams.microsoft.com/meet/369663788086307?p=KcQaQcgZrZsPYGqF2k',
+      meetingPassword: 'HD3fD2qr',
+      description: 'Get your questions answered by experienced Chartered Accountants in a relaxed, open-floor setting.'
     }
   ];
 
