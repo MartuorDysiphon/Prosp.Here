@@ -32,10 +32,10 @@ const Team = () => {
       designation: 'SAICA Trainee',
       title: 'BCom Accounting @ Wits University',
       location: 'Johannesburg, South Africa',
-      description: 'Midge is a finance professional who experienced firsthand the challenges of navigating the accounting profession without guidance. He co founded Prosp.Here to ensure no one faces those same barriers. He believes in the power of community and shared experiences.',
-      hobbies: 'Football, chess, financial modeling, watching documentaries',
-      funFact: 'I can solve a Rubik cube in under two minutes',
-      quote: 'Your network is your net worth, but your mindset is your greatest asset',
+      description: 'Beyond my academic and professional journey in audit and finance, I value meaningful conversations, mentorship, and creating spaces where people feel seen, heard, and inspired. I believe in the power of exposure, knowledge-sharing, and intentional networking to unlock opportunities and shape futures. My journey is rooted in curiosity, resilience, and a genuine desire to contribute positively to the lives of others while continuously evolving into the best version of myself.',
+      hobbies: 'Public speaking and debate engagement, Networking and meaningful conversations, Mentorship and youth empowerment, Personal growth and self-development, Watching compelling television series and storytelling content, Exploring career development and emerging opportunities',
+      funFact: 'I am named after a car called Mazda Midge',
+      quote: '“You may encounter many defeats, but you must not be defeated. Still, I rise.” — Inspired by Maya Angelou',
       image: midgeImg
     },
     {
