@@ -3,8 +3,6 @@ import styles from './Testimonials.module.css';
 
 // Import author images
 import katlegoImage from '../../assets/testimonials/kat.jpg';
-import thandoImage from '../../assets/testimonials/kat.jpg';
-import leratoImage from '../../assets/testimonials/kat.jpg';
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -19,22 +17,6 @@ const Testimonials = () => {
       image: katlegoImage,
       quote: 'Prosp.Here will give people a roadmap to navigate SAICA articles while connecting them with chartered accountants who look like them. This is the community we need in Mzansi.',
       rating: 5
-    },
-    {
-      id: 2,
-      name: 'Thando Nkosi',
-      role: 'SAICA Trainee, Johannesburg',
-      image: thandoImage,
-      quote: 'Before Prosp.Here, I had no idea where to start my accounting journey. The mentorship program connected me with a CA who looked like me and understood my struggles. Now I am thriving in my articles!',
-      rating: 5
-    },
-    {
-      id: 3,
-      name: 'Lerato Molefe',
-      role: 'Accounting Student, University of Pretoria',
-      image: leratoImage,
-      quote: 'The Varsity Compass and free sessions helped me understand the difference between SAICA and ACCA. I finally know which path is right for me. Thank you Prosp.Here for the free resources!',
-      rating: 5
     }
   ];
 
@@ -43,9 +25,9 @@ const Testimonials = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   }, [testimonials.length]);
 
-  const prevTestimonial = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
-  };
+  // const prevTestimonial = () => {
+  //   setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
+  // };
 
   const goToTestimonial = (index) => {
     setActiveIndex(index);
@@ -106,12 +88,12 @@ const Testimonials = () => {
           onMouseLeave={handleMouseLeave}
         >
           {/* Navigation Arrows */}
-          <button className={`${styles.navBtn} ${styles.navPrev}`} onClick={prevTestimonial}>
+          {/* <button className={`${styles.navBtn} ${styles.navPrev}`} onClick={prevTestimonial}>
             <i className="fas fa-chevron-left"></i>
           </button>
           <button className={`${styles.navBtn} ${styles.navNext}`} onClick={nextTestimonial}>
             <i className="fas fa-chevron-right"></i>
-          </button>
+          </button> */}
 
           {/* Testimonial Card */}
           <div className={styles.testimonialCard}>
