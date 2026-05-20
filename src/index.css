@@ -199,7 +199,7 @@ button {
 .btn-outline {
   display: inline-flex;
   align-items: center;
-  width: 100px;
+  width: fit-content;
   height: 30px;
   gap: .55rem;
   background: transparent;
