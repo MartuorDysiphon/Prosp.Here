@@ -199,7 +199,8 @@ button {
 .btn-outline {
   display: inline-flex;
   align-items: center;
-  width: 100%;
+  width: 100px;
+  height: 30px;
   gap: .55rem;
   background: transparent;
   color: var(--ink-light);
